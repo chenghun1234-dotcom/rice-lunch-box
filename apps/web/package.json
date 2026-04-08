@@ -4,19 +4,22 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev":     "vite",
-    "build":   "vite build",
-    "preview": "vite preview",
-    "lint":    "eslint src --ext .js,.jsx --report-unused-disable-directives"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "npm run build && wrangler dev",
+    "lint": "eslint src --ext .js,.jsx --report-unused-disable-directives",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
-    "react":                 "^18.3.1",
-    "react-dom":             "^18.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.31.1",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint":               "^8.57.0",
-    "vite":                 "^6.2.0"
+    "eslint": "^8.57.0",
+    "vite": "^6.2.0",
+    "wrangler": "^4.81.0"
   }
 }

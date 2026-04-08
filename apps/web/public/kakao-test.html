@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kakao Map Test</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #map { width: 500px; height: 400px; border: 2px solid #ccc; }
+    #log { margin-top: 12px; background: #f5f5f5; padding: 12px; font-family: monospace; white-space: pre-wrap; }
+    .ok { color: green; } .err { color: red; } .info { color: #555; }
+  </style>
+</head>
+<body>
+  <h2>Kakao SDK 직접 테스트</h2>
+  <div id="map"></div>
+  <div id="log">초기화 중...</div>
+
+  <script>
+    var KEY = "3cd29c9d5d9313c116fa1f9048fba176";
+    var log = document.getElementById("log");
+    function addLog(cls, msg) {
+      var line = document.createElement("div");
+      line.className = cls;
+      line.textContent = "[" + new Date().toLocaleTimeString() + "] " + msg;
+      log.appendChild(line);
+    }
+
+    addLog("info", "origin: " + window.location.origin);
+    addLog("info", "Script src: https://dapi.kakao.com/v2/maps/sdk.js?appkey=" + KEY + "&autoload=false");
+
+    var script = document.createElement("script");
+    script.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=" + KEY + "&autoload=false";
+
+    script.onload = function () {
+      addLog("ok", "✅ script.onload 발생");
+      addLog("info", "window.kakao 존재: " + !!window.kakao);
+      addLog("info", "window.kakao.maps 존재: " + !!(window.kakao && window.kakao.maps));
+
+      if (!window.kakao || !window.kakao.maps) {
+        addLog("err", "❌ kakao.maps 없음 → API 키 또는 도메인 등록 확인 필요");
+        return;
+      }
+
+      addLog("info", "kakao.maps.load() 호출 중...");
+      window.kakao.maps.load(function () {
+        addLog("ok", "✅ kakao.maps.load() 콜백 실행");
+        addLog("info", "kakao.maps.Map 존재: " + !!kakao.maps.Map);
+
+        try {
+          var map = new kakao.maps.Map(document.getElementById("map"), {
+            center: new kakao.maps.LatLng(37.5665, 126.9780),
+            level: 3
+          });
+          addLog("ok", "✅ 지도 생성 성공! 아래 지도가 보이면 정상입니다.");
+        } catch (e) {
+          addLog("err", "❌ 지도 생성 실패: " + e.message);
+        }
+      });
+    };
+
+    script.onerror = function (e) {
+      addLog("err", "❌ script.onerror 발생 → CORS 또는 네트워크 차단. e.type=" + (e && e.type));
+    };
+
+    document.head.appendChild(script);
+
+    setTimeout(function () {
+      if (!window.kakao || !window.kakao.maps) {
+        addLog("err", "❌ 10초 경과 후에도 kakao.maps 없음");
+      } else if (!window.kakao.maps.Map) {
+        addLog("err", "❌ 10초 경과 후에도 kakao.maps.Map 없음 (load() 콜백 미실행)");
+      }
+    }, 10000);
+  </script>
+</body>
+</html>

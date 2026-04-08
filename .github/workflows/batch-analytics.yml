@@ -1,0 +1,117 @@
+# ============================================================
+# .github/workflows/batch-analytics.yml
+# 매일 새벽 2시 KST (UTC 17:00) 배치 분석 실행
+# ============================================================
+
+name: 🌙 새벽 배치 분석
+
+on:
+  schedule:
+    - cron: "0 17 * * *"     # UTC 17:00 = KST 02:00
+  workflow_dispatch:          # 수동 실행도 가능
+    inputs:
+      target_date:
+        description: "집계 날짜 (YYYY-MM-DD, 기본: 어제)"
+        required: false
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: 📥 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 🟢 Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: scripts/package.json
+
+      - name: 📦 스크립트 의존성 설치
+        working-directory: scripts
+        run: npm ci
+
+      - name: 📊 배치 분석 실행
+        working-directory: scripts
+        env:
+          SUPABASE_URL:        ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          TARGET_DATE:          ${{ github.event.inputs.target_date || '' }}
+        run: node batch-analytics.js
+
+  collect-public-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: scripts/package.json
+
+      - working-directory: scripts
+        run: npm ci
+
+      - name: 🍱 착한가격업소 데이터 수집
+        working-directory: scripts
+        env:
+          SUPABASE_URL:        ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PUBLIC_DATA_API_KEY:  ${{ secrets.PUBLIC_DATA_API_KEY }}
+        run: node collect-public-data.js
+
+  check-closed:
+    name: 🚫 폐업 식당 체크 (LOCALDATA)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # analytics 완료 후 실행 (DB write 순서 보장)
+    needs: analytics
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: scripts/package.json
+
+      - working-directory: scripts
+        run: npm ci
+
+      - name: 🔍 LOCALDATA 폐업/신규 체크
+        working-directory: scripts
+        env:
+          SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          LOCALDATA_API_KEY:    ${{ secrets.LOCALDATA_API_KEY }}
+        run: node check-closed-restaurants.js
+
+  build-seo-pages:
+    name: 🗺️ SEO 페이지 자동 빌드
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # 폐업 체크 후 최신 데이터로 SEO 페이지 갱신
+    needs: check-closed
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: scripts/package.json
+
+      - working-directory: scripts
+        run: npm ci
+
+      - name: 🔨 SEO 페이지 빌드 (build_seo_pages RPC)
+        working-directory: scripts
+        env:
+          SUPABASE_URL:         ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node build-seo-pages.js

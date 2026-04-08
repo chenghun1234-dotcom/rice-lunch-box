@@ -1,0 +1,21 @@
+{
+  "name": "dosirak-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "도시락탈출 데이터 수집 스크립트",
+  "scripts": {
+    "import-csv": "node import-csv.js",
+    "test-py": "python test_local.py",
+    "collect": "node collect-public-data.js",
+    "batch": "node batch-analytics.js",
+    "check-closed": "node check-closed-restaurants.js",
+    "build-seo": "node build-seo-pages.js",
+    "all": "npm run batch && npm run collect && npm run check-closed && npm run build-seo"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

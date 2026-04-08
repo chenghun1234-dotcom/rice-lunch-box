@@ -1,0 +1,13 @@
+name = "dosirak-og-image"
+main = "index.js"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "dosirak-og-image-prod"
+
+[vars]
+SUPABASE_URL = ""      # set in dashboard
+SUPABASE_ANON_KEY = "" # set in dashboard
+
+# Satori WASM is loaded from CDN, no bindings needed

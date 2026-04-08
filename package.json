@@ -1,0 +1,10 @@
+{
+  "name": "dosirak-escape-monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build",
+    "preview": "npm --prefix apps/web run preview",
+    "lint": "npm --prefix apps/web run lint"
+  }
+}

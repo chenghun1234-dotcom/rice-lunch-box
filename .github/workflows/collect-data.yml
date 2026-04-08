@@ -1,0 +1,45 @@
+# ============================================================
+# .github/workflows/collect-data.yml
+# 공공데이터 자동 수집 (하루 2회, GitHub Actions 무료 사용)
+# 데이터: 착한가격업소 (공공데이터포털 API)
+# ============================================================
+
+name: 🍱 공공데이터 수집 (착한가격업소)
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 매일 09:00 KST (UTC 00:00)
+    - cron: "0 12 * * *"  # 매일 21:00 KST (UTC 12:00)
+  workflow_dispatch:       # 수동 실행 버튼
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15    # 무한 루프 방지
+
+    steps:
+      - name: 📥 코드 체크아웃
+        uses: actions/checkout@v4
+
+      - name: 🟢 Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: scripts/package.json
+
+      - name: 📦 의존성 설치
+        working-directory: scripts
+        run: npm ci
+
+      - name: 🗺 공공데이터 수집 실행
+        working-directory: scripts
+        env:
+          PUBLIC_DATA_API_KEY:  ${{ secrets.PUBLIC_DATA_API_KEY }}
+          SUPABASE_URL:         ${{ secrets.VITE_SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node collect-public-data.js
+
+      - name: 📊 수집 결과 요약
+        if: always()
+        run: echo "✅ 수집 완료 - $(date '+%Y-%m-%d %H:%M KST')"

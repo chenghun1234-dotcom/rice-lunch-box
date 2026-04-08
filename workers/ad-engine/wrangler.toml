@@ -1,0 +1,33 @@
+# ============================================================
+# workers/ad-engine/wrangler.toml
+# Cloudflare Workers 배포 설정
+# 배포 명령: npx wrangler deploy
+# ============================================================
+
+name            = "dosirak-ad-engine"
+main            = "index.js"
+compatibility_date = "2024-01-01"
+
+# ── Workers KV (Geohash 캐시) ─────────────────────────────
+# 생성 명령: npx wrangler kv:namespace create GEO_CACHE
+[[kv_namespaces]]
+binding  = "GEO_CACHE"
+id       = "YOUR_KV_NAMESPACE_ID"          # 생성 후 채울 것
+preview_id = "YOUR_KV_PREVIEW_NAMESPACE_ID"
+
+# ── 환경변수 (민감 정보는 wrangler secret 으로 등록) ───────
+# 등록 명령:
+#   npx wrangler secret put SUPABASE_URL
+#   npx wrangler secret put SUPABASE_ANON_KEY
+[vars]
+SUPABASE_URL      = ""   # wrangler secret으로 덮어씌워짐
+SUPABASE_ANON_KEY = ""   # wrangler secret으로 덮어씌워짐
+
+# ── 라우트 설정 (Cloudflare Pages 도메인과 연동 시) ────────
+# routes = [
+#   { pattern = "dosirak.pages.dev/api/*", zone_name = "dosirak.pages.dev" }
+# ]
+
+# ── 무료 티어 초과 방지: CPU 시간 제한 ───────────────────
+[limits]
+cpu_ms = 10   # 요청당 최대 10ms CPU (무료 허용 범위)

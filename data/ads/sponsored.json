@@ -1,0 +1,56 @@
+{
+  "_comment": "초기 광고 데이터 샘플 (DB 미사용 시 JSON으로 관리 가능)",
+  "_note": "실제 운영 시 이 파일 대신 Supabase advertisers 테이블 사용 권장",
+  "version": "1.0.0",
+  "updated_at": "2026-04-05",
+  "pinned_ads": [
+    {
+      "id": "demo-001",
+      "name": "역삼 순대국밥",
+      "category": "한식",
+      "address": "서울 강남구 역삼동 123-4",
+      "avg_price": 8000,
+      "sale_price": 6500,
+      "discount_label": "오늘 점심 특가 -19%",
+      "image_url": "https://placehold.co/200x150?text=순대국밥",
+      "lat": 37.5000,
+      "lng": 127.0370,
+      "tags": ["착한가격", "점심특가", "국밥"],
+      "plan_type": "timesale",
+      "timesale_start": 11,
+      "timesale_end": 13,
+      "timesale_days": ["mon", "tue", "wed", "thu", "fri"]
+    },
+    {
+      "id": "demo-002",
+      "name": "합정 김치찌개 전문점",
+      "category": "한식",
+      "address": "서울 마포구 합정동 456-7",
+      "avg_price": 9000,
+      "sale_price": null,
+      "discount_label": null,
+      "image_url": "https://placehold.co/200x150?text=김치찌개",
+      "lat": 37.5492,
+      "lng": 126.9135,
+      "tags": ["착한가격", "가성비"],
+      "plan_type": "pinned",
+      "timesale_start": null,
+      "timesale_end": null,
+      "timesale_days": []
+    }
+  ],
+  "playlists": [
+    {
+      "id": "pl-001",
+      "slug": "lunch-special-top5",
+      "title": "이번 주 직장인 점심 특가 TOP 5",
+      "description": "월~금 11시~13시, 검증된 가성비 맛집만 선별했어요",
+      "theme_tag": "점심특가",
+      "is_sponsored": true,
+      "items": [
+        { "rank": 1, "restaurant_id": "demo-001", "name": "역삼 순대국밥",       "avg_price": 6500 },
+        { "rank": 2, "restaurant_id": "demo-002", "name": "합정 김치찌개 전문점", "avg_price": 9000 }
+      ]
+    }
+  ]
+}

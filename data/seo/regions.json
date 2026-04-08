@@ -1,0 +1,171 @@
+{
+  "districts": [
+    {
+      "gu": "마포구",
+      "gu_en": "mapo-gu",
+      "dongs": [
+        { "dong": "합정동", "dong_en": "hapjeong-dong", "keywords": ["합정 맛집", "합정 점심", "합정 혼밥", "합정 가성비", "망원 맛집", "홍대 인근 식당"] },
+        { "dong": "망원동", "dong_en": "mangwon-dong", "keywords": ["망원 맛집", "망원 카페", "망원 점심 특가", "망원시장 맛집", "성산 식당"] },
+        { "dong": "상수동", "dong_en": "sangsu-dong", "keywords": ["상수 맛집", "홍대 상수 식당", "상수역 점심"] },
+        { "dong": "서교동", "dong_en": "seogyo-dong", "keywords": ["홍대 맛집", "서교동 식당", "홍대 점심 추천", "홍대 가성비"] },
+        { "dong": "공덕동", "dong_en": "gongdeok-dong", "keywords": ["공덕 맛집", "공덕역 점심", "마포 직장인 식당", "공덕 혼밥"] },
+        { "dong": "대흥동", "dong_en": "daeheung-dong", "keywords": ["대흥동 맛집", "마포 가성비 식당"] },
+        { "dong": "용강동", "dong_en": "yonggang-dong", "keywords": ["마포구청 맛집", "용강동 점심"] },
+        { "dong": "아현동", "dong_en": "ahyeon-dong", "keywords": ["아현동 맛집", "이대 인근 식당", "신촌 가성비"] }
+      ]
+    },
+    {
+      "gu": "강남구",
+      "gu_en": "gangnam-gu",
+      "dongs": [
+        { "dong": "역삼동", "dong_en": "yeoksam-dong", "keywords": ["역삼 맛집", "역삼역 점심", "강남 직장인 식당", "역삼 가성비", "강남 혼밥"] },
+        { "dong": "삼성동", "dong_en": "samseong-dong", "keywords": ["삼성역 맛집", "코엑스 근처 식당", "봉은사 맛집", "삼성 점심 특가"] },
+        { "dong": "논현동", "dong_en": "nonhyeon-dong", "keywords": ["논현 맛집", "논현동 점심", "강남구 가성비"] },
+        { "dong": "청담동", "dong_en": "cheongdam-dong", "keywords": ["청담 맛집", "청담동 식당", "청담 데이트 코스"] },
+        { "dong": "압구정동", "dong_en": "apgujeong-dong", "keywords": ["압구정 맛집", "압구정 로데오 식당", "압구정 점심"] },
+        { "dong": "대치동", "dong_en": "daechi-dong", "keywords": ["대치 맛집", "대치역 점심", "학원가 근처 식당"] },
+        { "dong": "도곡동", "dong_en": "dogok-dong", "keywords": ["도곡 맛집", "한티역 근처 식당"] },
+        { "dong": "개포동", "dong_en": "gaepo-dong", "keywords": ["개포 맛집", "개포동 가성비 식당"] }
+      ]
+    },
+    {
+      "gu": "서초구",
+      "gu_en": "seocho-gu",
+      "dongs": [
+        { "dong": "서초동", "dong_en": "seocho-dong", "keywords": ["서초 맛집", "서초역 점심", "법원 근처 식당", "서초 직장인 식당"] },
+        { "dong": "강남대로", "dong_en": "gangnamdaero", "keywords": ["교대역 맛집", "방배 맛집", "서초구 가성비"] },
+        { "dong": "반포동", "dong_en": "banpo-dong", "keywords": ["반포 맛집", "고속터미널 근처 식당", "반포 점심 특가"] },
+        { "dong": "방배동", "dong_en": "bangbae-dong", "keywords": ["방배 맛집", "방배동 카페거리", "방배 혼밥"] },
+        { "dong": "잠원동", "dong_en": "jamwon-dong", "keywords": ["잠원 맛집", "신반포 식당"] }
+      ]
+    },
+    {
+      "gu": "송파구",
+      "gu_en": "songpa-gu",
+      "dongs": [
+        { "dong": "잠실동", "dong_en": "jamsil-dong", "keywords": ["잠실 맛집", "잠실역 점심", "롯데월드 근처 식당", "잠실 가성비", "석촌호수 맛집"] },
+        { "dong": "가락동", "dong_en": "garak-dong", "keywords": ["가락 맛집", "가락시장 근처 식당", "문정 점심"] },
+        { "dong": "방이동", "dong_en": "bangi-dong", "keywords": ["방이 맛집", "올림픽공원 근처 식당"] },
+        { "dong": "문정동", "dong_en": "munjeong-dong", "keywords": ["문정 맛집", "문정역 점심 특가", "위례 식당"] },
+        { "dong": "천호동", "dong_en": "cheonho-dong", "keywords": ["천호 맛집", "천호역 점심", "강동 가성비"] }
+      ]
+    },
+    {
+      "gu": "영등포구",
+      "gu_en": "yeongdeungpo-gu",
+      "dongs": [
+        { "dong": "여의도동", "dong_en": "yeouido-dong", "keywords": ["여의도 맛집", "여의도 직장인 식당", "여의도 점심 특가", "국회의사당 근처 식당", "여의도 혼밥"] },
+        { "dong": "영등포동", "dong_en": "yeongdeungpo-dong", "keywords": ["영등포 맛집", "영등포시장 식당", "영등포 가성비"] },
+        { "dong": "당산동", "dong_en": "dangsan-dong", "keywords": ["당산 맛집", "당산역 점심", "영등포 혼밥"] },
+        { "dong": "문래동", "dong_en": "mullae-dong", "keywords": ["문래 맛집", "문래동 식당", "철공소 골목 맛집"] }
+      ]
+    },
+    {
+      "gu": "종로구",
+      "gu_en": "jongno-gu",
+      "dongs": [
+        { "dong": "종로1~4가", "dong_en": "jongno-1to4", "keywords": ["종로 맛집", "청계천 근처 식당", "광화문 점심", "종로 직장인 식당"] },
+        { "dong": "인사동", "dong_en": "insadong", "keywords": ["인사동 맛집", "인사동 한식", "종로 전통 음식점"] },
+        { "dong": "혜화동", "dong_en": "hyehwa-dong", "keywords": ["혜화 맛집", "대학로 맛집", "혜화역 점심 추천"] },
+        { "dong": "삼청동", "dong_en": "samcheong-dong", "keywords": ["삼청동 맛집", "경복궁 근처 식당", "북촌 맛집"] },
+        { "dong": "창신동", "dong_en": "changsin-dong", "keywords": ["동대문 맛집", "창신 가성비 식당"] }
+      ]
+    },
+    {
+      "gu": "중구",
+      "gu_en": "jung-gu",
+      "dongs": [
+        { "dong": "명동", "dong_en": "myeongdong", "keywords": ["명동 맛집", "명동 점심 추천", "명동 가성비", "시청 근처 식당"] },
+        { "dong": "을지로동", "dong_en": "euljiro-dong", "keywords": ["을지로 맛집", "을지로 힙 식당", "을지로 가성비", "을지로 혼밥"] },
+        { "dong": "충무로동", "dong_en": "chungmuro-dong", "keywords": ["충무로 맛집", "동대입구 점심", "약수 맛집"] }
+      ]
+    },
+    {
+      "gu": "용산구",
+      "gu_en": "yongsan-gu",
+      "dongs": [
+        { "dong": "이태원동", "dong_en": "itaewon-dong", "keywords": ["이태원 맛집", "이태원 외국 음식", "이태원 혼밥", "한남 식당"] },
+        { "dong": "한남동", "dong_en": "hannam-dong", "keywords": ["한남 맛집", "한남동 브런치", "한남 가성비"] },
+        { "dong": "삼각지동", "dong_en": "samgakji-dong", "keywords": ["삼각지 맛집", "숙대입구 점심", "용산 직장인 식당"] },
+        { "dong": "효창동", "dong_en": "hyochang-dong", "keywords": ["효창 맛집", "공덕 인근 가성비 식당"] }
+      ]
+    },
+    {
+      "gu": "성동구",
+      "gu_en": "seongdong-gu",
+      "dongs": [
+        { "dong": "성수동", "dong_en": "seongsu-dong", "keywords": ["성수 맛집", "성수동 브런치", "성수 힙 식당", "서울숲 맛집", "성수 혼밥"] },
+        { "dong": "왕십리동", "dong_en": "wangsimni-dong", "keywords": ["왕십리 맛집", "왕십리 점심 특가", "성동 가성비 식당"] },
+        { "dong": "뚝섬동", "dong_en": "ttukseom-dong", "keywords": ["뚝섬 맛집", "건대 인근 식당"] }
+      ]
+    },
+    {
+      "gu": "광진구",
+      "gu_en": "gwangjin-gu",
+      "dongs": [
+        { "dong": "건대입구", "dong_en": "konkuk-univ", "keywords": ["건대 맛집", "건대입구 점심", "건대 가성비", "건대 혼밥"] },
+        { "dong": "구의동", "dong_en": "guui-dong", "keywords": ["구의 맛집", "강변 근처 식당", "구의역 점심"] },
+        { "dong": "자양동", "dong_en": "jayang-dong", "keywords": ["자양동 맛집", "양꼬치 골목", "자양 중국 음식"] }
+      ]
+    },
+    {
+      "gu": "동작구",
+      "gu_en": "dongjak-gu",
+      "dongs": [
+        { "dong": "노량진동", "dong_en": "noryangjin-dong", "keywords": ["노량진 맛집", "노량진 수산시장 근처", "노량진 가성비", "공무원 식당"] },
+        { "dong": "사당동", "dong_en": "sadang-dong", "keywords": ["사당 맛집", "사당역 점심", "동작 가성비 식당"] },
+        { "dong": "상도동", "dong_en": "sangdo-dong", "keywords": ["상도 맛집", "숭실대 맛집", "상도 혼밥"] }
+      ]
+    },
+    {
+      "gu": "관악구",
+      "gu_en": "gwanak-gu",
+      "dongs": [
+        { "dong": "신림동", "dong_en": "sillim-dong", "keywords": ["신림 맛집", "신림역 점심", "신림 가성비", "서울대 근처 식당"] },
+        { "dong": "봉천동", "dong_en": "bongcheon-dong", "keywords": ["봉천 맛집", "서울대입구 식당", "관악 혼밥"] }
+      ]
+    },
+    {
+      "gu": "동대문구",
+      "gu_en": "dongdaemun-gu",
+      "dongs": [
+        { "dong": "청량리동", "dong_en": "cheongnyangni-dong", "keywords": ["청량리 맛집", "청량리 점심", "동대문 가성비 식당"] },
+        { "dong": "제기동", "dong_en": "jegi-dong", "keywords": ["경동시장 맛집", "제기동 전통 음식"] },
+        { "dong": "이문동", "dong_en": "imun-dong", "keywords": ["외대 맛집", "이문동 가성비", "경희대 근처 식당"] }
+      ]
+    },
+    {
+      "gu": "은평구",
+      "gu_en": "eunpyeong-gu",
+      "dongs": [
+        { "dong": "연신내동", "dong_en": "yeonsinnae-dong", "keywords": ["연신내 맛집", "연신내역 점심", "은평 가성비 식당"] },
+        { "dong": "불광동", "dong_en": "bulgwang-dong", "keywords": ["불광 맛집", "불광역 점심", "은평 혼밥"] }
+      ]
+    },
+    {
+      "gu": "서대문구",
+      "gu_en": "seodaemun-gu",
+      "dongs": [
+        { "dong": "신촌동", "dong_en": "sinchon-dong", "keywords": ["신촌 맛집", "신촌 대학가 식당", "이대 맛집", "신촌 가성비"] },
+        { "dong": "연희동", "dong_en": "yeonhui-dong", "keywords": ["연희동 맛집", "연희 브런치", "서대문 혼밥"] }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "jomshik",
+      "name": "점심특가",
+      "keywords_suffix": ["점심특가", "점심 메뉴", "런치 세트", "직장인 점심"]
+    },
+    {
+      "id": "gasungbi",
+      "name": "가성비",
+      "keywords_suffix": ["가성비", "저렴한 식당", "착한 가격", "1만원 이하"]
+    },
+    {
+      "id": "honbab",
+      "name": "혼밥",
+      "keywords_suffix": ["혼밥", "혼자 먹기 좋은 곳", "1인 식사", "카운터석"]
+    }
+  ]
+}
